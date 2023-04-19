@@ -1,4 +1,4 @@
-import { memo } from "preact/compat";
+import { memo } from "react";
 import Story from "./story";
 export default memo(function Gallery({ stories, action = () => {} }) {
   return (
