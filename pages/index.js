@@ -16,7 +16,7 @@ export default function Home() {
           <Image src="/MadeIn.png" alt="Vercel Logo" width={200} height={150} />
           🪑
         </h1>
-        <Gallery />
+       {/* // <Gallery /> */}
       </main>
 
       <footer className={styles.footer}>
