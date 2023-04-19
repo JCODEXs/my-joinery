@@ -34,7 +34,7 @@ background:${
               }
 			    `}
             >
-              <div style={`flex:1;`}>{item.privacy == "premium" && "🔒"}</div>
+              <div style={`flex:1;`}>{item.privacy == "premium" && "📸"}</div>
               <div> {item.type == "video" ? "📹" : "📸"}</div>
             </div>
             <div style="display:flex;">
@@ -52,7 +52,6 @@ background:${
                 >
                   <Image
                     onClick={(e) => action(e, media.contentUri)}
-                    objectFit="cover"
                     alt="product"
                     quality={50}
                     height={120}

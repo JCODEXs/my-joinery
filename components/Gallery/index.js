@@ -1,12 +1,6 @@
-import { useJasmin } from 'vStore/jasmin';
-import { useSelected } from 'vStore/selected';
+
 import { useState, useLayoutEffect, useEffect } from 'preact/hooks';
-import axios from 'axios';
-import Resume from 'components/Admin/resume';
-import { attachPieMoney } from 'components/Stats/Piemoney';
-import { attachPieTime } from 'components/Stats/Pietime';
-import { attachPieKpi } from 'components/Stats/Piekpi';
-import Gallery from './gallery';
+
 import ModelInfo from 'components/modelInfo';
 import moment from 'moment';
 export default function FullJasmin() {
@@ -14,9 +8,6 @@ export default function FullJasmin() {
   const [vip, setVip] = useState(undefined);
   const [report, setReport] = useState(undefined);
   const { selected } = useSelected();
-  const { live, periods,timezone } = useJasmin();
-  const [period, setPeriod] = useState(periods[periods.length - 1]);
-  const model = live.find((model) => model.screenName == selected);
   useLayoutEffect(async () => {
     setPic(undefined);
     setVip(undefined);
@@ -45,9 +36,7 @@ export default function FullJasmin() {
   const getVip = () => {};
   useEffect(async () => {
     if (report) {
-      attachPieMoney(report.earnings);
-      attachPieTime(report.workingTime);
-      attachPieKpi(report.myContentKpi);
+   
     }
   }, [report]);
   {
@@ -57,8 +46,7 @@ export default function FullJasmin() {
     <>
       {model && (
         <div style="max-width:100%;position:relative;display:flex;flex-direction:column;min-height:100%;max-height:100%;overflow:hidden;">
-          <ModelInfo model={model} timezone={timezone}/>
-          <div
+                <div
             style="
           flex:1;
           position:relative;
@@ -118,21 +106,21 @@ export default function FullJasmin() {
 		    overflow-y:scroll;
 		    "
             >
-              <Gallery
+              {/* <Gallery
                   stories={model.stories}
                 action={(e, pic) => {
                   e.preventDefault();
                   e.stopPropagation();
                   setPic(pic);
                 }}
-              />
+              /> */}
               <div style="padding:10px;">
                 <div
                   style="z-index:7;border: solid 1px rgba(100,100,100,0.6);
 filter: drop-shadow(0 0 0.75rem black);
 	    backdrop-filter:blur(6px);border-radius:10px;padding:5px;position:sticky;background:rgba(20,10,10,0.7);top:5px;display:flex;flex-wrap:wrap; gap:5px;"
                 >
-                  <select
+                  {/* <select
                     value={period.period}
                     onChange={(e) => {
                       const found = periods.find(
@@ -149,27 +137,24 @@ filter: drop-shadow(0 0 0.75rem black);
                           <div> {period.period}</div>
                         </option>
                       ))}
-                  </select>
+                  </select> */}
                   <div style="display:flex;flex-wrap:wrap;gap:10px;">
                     <div style="display:flex;gap:10px;">
                       <div style="width:50px;">{`FROM: `} </div>
-                      {period.startDate}
+                      {}
                     </div>
 
                     <div style="display:flex;gap:10px;">
                       <div style="width:50px;">{`TO: `} </div>
-                      {period.endDate}
+                      {}
                     </div>
                   </div>
                   {/* <div> {JSON.stringify(period, null, 2)}</div> */}
-                  <Resume data={report?.total} />
+           
                 </div>
                 {report && false && (
                   <div style="padding:10px;">
-                    <div>${report.total.earnings.value}</div>
-                    <div>${report.total.workTime.value}</div>
-                    <div>${report.total.averageEarningPerHour.value}</div>
-                  </div>
+                            </div>
                 )}
                 <div
                   style="
@@ -208,11 +193,11 @@ height:100%;
                 <h1>VIP</h1>
                 {vip?.map((vipi) => (
                   <div style="padding:10px;">
-                    <div>{vipi.createdAt}</div>
-                    <div>{vipi.description}</div>
+                    <div></div>
+                    <div></div>
                     <div style="display:flex;gap:10px;">
-                      <div>Collected: {vipi.creditCollected}</div>
-                      <div>Goal: {vipi.creditGoal}</div>
+                      <div>Collected:</div>
+                      <div>Goal:</div>
                     </div>
                     <div>{vipi.status}</div>
                   </div>
