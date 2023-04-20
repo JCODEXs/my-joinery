@@ -37,7 +37,7 @@ const [images,setImages] = useState()
  >
   {/* <pre>{JSON.stringify(images,null,2)}</pre> */}
 {images && <Gallery  images={images} />}
- <AvailableDeals />
+{false && <AvailableDeals />}
 
 </div>
 }
