@@ -193,7 +193,7 @@ height:100%;
               </div>
               <div style="padding:20px;">
                 <h1>VIP</h1>
-                {vip?.map((vipi) => (
+                {/* {vip?.map((vipi) => (
                   <div style="padding:10px;">
                     <div></div>
                     <div></div>
@@ -203,7 +203,7 @@ height:100%;
                     </div>
                     <div>{vipi.status}</div>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>
