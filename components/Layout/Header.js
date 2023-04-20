@@ -49,7 +49,7 @@ useEffect(()=>{
   return (
     <Fragment>
       <header className={classes.header}>
-        <h1>MADERAFI</h1> 
+        <h1>   <Image src="/MadeIn.png" alt="Vercel Logo" width={350} height={210} style={{borderRadius:"50%"}} /></h1> 
 
            {/* <button className={classes.button}  onClick ={enLanguageHandler} > {Language} </button> 
            */}
