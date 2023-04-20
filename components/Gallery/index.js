@@ -2,6 +2,7 @@
 import { useState, useLayoutEffect, useEffect } from 'preact/hooks';
 
 import ModelInfo from 'components/modelInfo';
+import Gallery from './secondGallery';
 import moment from 'moment';
 export default function FullJasmin() {
   const [pic, setPic] = useState(undefined);
