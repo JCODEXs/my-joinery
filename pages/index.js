@@ -9,13 +9,16 @@ import AvailableDeals from "../components/Deals/AvailableDeals"
 export default function Home() {
 
 const [images,setImages] = useState()
-  useEffect(()=>{
-  fetch('/api/hello')
-  .then(res => res.json())
-  .then(data => setImages(data.images))
-  .catch(error => console.error(error));
-  
-  },[])
+useEffect(async () => {
+  try {
+    const response = await fetch('/api/hello');
+    const data = await response.json();
+    setImages(data.images);
+  } catch (error) {
+    console.error(error);
+  }
+}, []);
+
   console.log(images)
   return (
     <div className={styles.container}>

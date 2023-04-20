@@ -4,6 +4,7 @@ import { useState, useLayoutEffect, useEffect } from 'preact/hooks';
 import ModelInfo from 'components/modelInfo';
 import Gallery from './secondGallery';
 import moment from 'moment';
+import Image from 'next/image';
 export default function FullJasmin() {
   const [pic, setPic] = useState(undefined);
   const [vip, setVip] = useState(undefined);
@@ -74,7 +75,7 @@ export default function FullJasmin() {
                 }}
               >
                 <div style="display:flex;flex:1;overflow:hidden;border-bottom:3px solid rgb(40,40,40);">
-                  <img
+                  <Image
                     style="max-height:100%;
 			  width:auto;
 			  object-fit:contain;

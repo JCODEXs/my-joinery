@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState} from "react";
  import HeaderCartButton from "./HeaderCartButton";
 import backImage from "../../assets/growmoney.jpg";
 import classes from "./Header.module.css";
+import Image from "next/image";
 
 
 
@@ -59,7 +60,7 @@ useEffect(()=>{
       </header>
 
            <div className={classes["main-image"]}>
-                <img src={backImage} alt="goods and services" />
+                <Image src={backImage} alt="goods and services" />
           </div>
 
     

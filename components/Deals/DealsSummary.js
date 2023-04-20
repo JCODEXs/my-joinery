@@ -19,7 +19,7 @@ En definitiva, si está buscando muebles de alta calidad y diseño personalizado
       </p>
       <p>chatea con nosotros en Wassap!!</p>
       <div>
-    <a width = '50px'  aria-label="Chat on WhatsApp" href="https://wa.me/56995375560"> <img alt="Chat on WhatsApp" src="/WhatsAppButtonGreenLarge.svg" /> </a>
+    <a width = '50px'  aria-label="Chat on WhatsApp" href="https://wa.me/56995375560"> <Image alt="Chat on WhatsApp" src="/WhatsAppButtonGreenLarge.svg" width={70} height={60}/> </a>
     </div>
     </section>
   );
