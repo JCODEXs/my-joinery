@@ -9,16 +9,13 @@ import AvailableDeals from "../components/Deals/AvailableDeals"
 export default function Home() {
 
 const [images,setImages] = useState()
-useEffect(async () => {
-  try {
-    const response = await fetch('/api/hello');
-    const data = await response.json();
-    setImages(data.images);
-  } catch (error) {
-    console.error(error);
-  }
-}, []);
-
+  useEffect(()=>{
+  fetch('/api/hello')
+  .then(res => res.json())
+  .then(data => setImages(data.images))
+  .catch(error => console.error(error));
+  
+  },[])
   console.log(images)
   return (
     <div className={styles.container}>
@@ -34,11 +31,11 @@ useEffect(async () => {
             </h1>
         </div>
           <DealsSummary />
-      <AvailableDeals />
        {<div
  >
   {/* <pre>{JSON.stringify(images,null,2)}</pre> */}
 {images && <Gallery  images={images} />}
+ <AvailableDeals />
 
 </div>
 }

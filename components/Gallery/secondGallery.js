@@ -115,6 +115,7 @@ export default function Gallery({ images }) {
     backgroundRepeat: "no-repeat",
     backgroundSize: "50px auto",
     overflow: "hidden",
+    padding: "5px",
     minWidth: "max-content",
     border: "solid -2px rgba(200,200,200,0.1)",
   };
@@ -133,7 +134,7 @@ export default function Gallery({ images }) {
   return (
     <div>
       <div style={containerStyle}>{/* {`$${story.price} ${story.status}`} */}</div>
-      <div ref={containerRef} className="container"  style={{ display: "flex", maxWidth: "800px", overflowX: "auto", scrollBehavior: "smooth" }}>
+      <div ref={containerRef} className="container"  style={{ display: "flex", maxWidth: "1200px", overflowX: "auto", scrollBehavior: "smooth"  , padding: "5px",}}>
         {images.map((image, index) => (
           <div key={index} style={{ border: "1px solid rgba(200,200,200,0.6)" }}>
             <div style={imageLabelStyle}>
