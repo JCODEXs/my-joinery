@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Gallery from "../components/Gallery/secondGallery";
 import DealsSummary from "../components/Deals/DealsSummary"
 import AvailableDeals from "../components/Deals/AvailableDeals"
+import Header from "../components/Layout/Header";
 
 export default function Home() {
 
@@ -25,6 +26,7 @@ const [images,setImages] = useState()
       </Head>
 
       <main className={styles.main} style={{background : "rgb(30,45,60,0.4)"}}>
+        <Header/>
         <div>
           <h1 className={styles.title}>
            {/* // <Image src="/MadeIn.png" alt="Vercel Logo" width={300} height={190} /> */}

@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useState} from "react";
  import HeaderCartButton from "./HeaderCartButton";
-import backImage from "../../assets/growmoney.jpg";
 import classes from "./Header.module.css";
 import Image from "next/image";
 
@@ -50,17 +49,17 @@ useEffect(()=>{
   return (
     <Fragment>
       <header className={classes.header}>
-        <h1>Book Keeping</h1> 
+        <h1>MADERAFI</h1> 
 
-           <button className={classes.button}  onClick ={enLanguageHandler} > {Language} </button> 
-          
+           {/* <button className={classes.button}  onClick ={enLanguageHandler} > {Language} </button> 
+           */}
          {/* <Menubar className={classes.menubar}/> */}
         <HeaderCartButton onClick={props.onShowCart} Lengua={Language} />
 
       </header>
 
            <div className={classes["main-image"]}>
-                <Image src={backImage} alt="goods and services" />
+                <Image src={"/herramientas2.jpg"} width={800} height={450}alt="goods and services" />
           </div>
 
     
