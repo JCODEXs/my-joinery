@@ -108,7 +108,7 @@ export default function Gallery({ images }) {
     display: "flex",
     padding: "3px",
     fontSize: "80%",
-    background: "rgba(0,60,160,0.2)",
+    background: "rgba(40,60,160,0.2)",
   };
 
   return (
@@ -116,16 +116,16 @@ export default function Gallery({ images }) {
       <div style={containerStyle}>{/* {`$${story.price} ${story.status}`} */}</div>
       <div ref={containerRef} className="container"  style={{ display: "flex", maxWidth: "90%", overflowX: "auto", scrollBehavior: "smooth"  , padding: "5px",}}>
         {images.map((image, index) => (
-          <div key={index} style={{ border: "1px solid rgba(200,200,200,0.6)" }}>
+          <div key={index} style={{ border: "1px solid rgba(100,200,100,0.6)" }}>
             <div style={imageLabelStyle}>
-              <div>{ `$ ${100000*index+300000*Math.random(1).toFixed(1)}`} </div>
+              {/* <div>{ `$ ${100000*index+300000*Math.random(1).toFixed(1)}`} </div> */}
             </div>
             <div style={imageWrapperStyle}>
               <div key={index} style={imageContainerStyle}>
                 <Image
                   //onClick={(e) => action(e, image)}
                   alt="product"
-                  quality={88}
+                  quality={95}
                   height={320}
                   width={250}
                   priority={true}

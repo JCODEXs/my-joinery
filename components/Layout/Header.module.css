@@ -44,7 +44,8 @@
   align-items: center;
   border-radius: 25px;
   z-index: 12;
-  /* font-weight: bold; */
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
 }
 
 .button:hover,
