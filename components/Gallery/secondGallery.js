@@ -78,7 +78,7 @@ export default function Gallery({ images }) {
             } else {
               // Go to the next image after the duration has elapsed
               currentIndex = (currentIndex + 1) % scrollPositions.length;
-              timeoutId = setTimeout(scrollContainer, 5000);
+              timeoutId = setTimeout(scrollContainer, 3000);
             }
           };
       
@@ -87,7 +87,7 @@ export default function Gallery({ images }) {
         };
       
         // Start the initial timeout
-        timeoutId = setTimeout(scrollContainer, 5000);
+        timeoutId = setTimeout(scrollContainer, 3000);
       
         // Cleanup function to clear the timeout when the component unmounts
         return () => {
@@ -110,7 +110,7 @@ export default function Gallery({ images }) {
 
   const imageContainerStyle = {
     boxShadow: "inset 0 0 0 0.2em rgba(100,100,100,0.2)",
-    backgroundImage: "url('footerCorona.png')",
+   // backgroundImage: "url('footerCorona.png')",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "50px auto",
