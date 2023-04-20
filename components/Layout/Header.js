@@ -51,7 +51,7 @@ useEffect(()=>{
     function setDivHeight() {
     const div = document.querySelector('#my-div');
     const width = div.offsetWidth; 
-    const height = 100*1200 / width;
+    const height = 180*1200 / width;
    
     setWidth(width);
     setHeight(height);}
@@ -76,7 +76,7 @@ useEffect(()=>{
     <Fragment>
       <header id="my-div" className={classes.header}>
         <div style={{borderRadius:"50%",zIndex:"11"}}>
-          <Image src="/MadeIn.png" alt="Vercel Logo" width={200} height={140} style={{borderRadius:"50%",zIndex:"9"}} />
+          <Image src="/MadeIn.png" alt="Vercel Logo" width={300} height={210} style={{borderRadius:"50%",zIndex:"9"}} />
         </div>
       
           <div style={{borderRadius:"50%",minWidth:"10rem",maxWidth:"45rem",display:"flex",flexDirection:"row",flexWrap:"wrap"}}>
