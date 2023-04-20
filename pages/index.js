@@ -32,6 +32,7 @@ const [images,setImages] = useState()
            {/* // <Image src="/MadeIn.png" alt="Vercel Logo" width={300} height={190} /> */}
             </h1>
         </div>
+        
           <DealsSummary />
        {<div
  >
@@ -41,6 +42,7 @@ const [images,setImages] = useState()
 
 </div>
 }
+
       </main>
       <footer className={styles.footer}>
         Powered by{" "}
@@ -48,8 +50,9 @@ const [images,setImages] = useState()
           <Image
             src="/ColorMetta.png"
             alt="Vercel Logo"
-            width={42}
-            height={50}
+            width={84}
+            height={100}
+            style={{borderRadius:"40%"}}
           />
         </span>
       </footer>
