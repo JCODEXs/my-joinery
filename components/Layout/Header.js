@@ -49,11 +49,12 @@ useEffect(()=>{
   return (
     <Fragment>
       <header className={classes.header}>
-        <h1>   <Image src="/MadeIn.png" alt="Vercel Logo" width={350} height={210} style={{borderRadius:"50%"}} /></h1> 
-        <button className={classes.button}   > Inicio </button> 
-        <button className={classes.button}   > Productos </button> 
-        <button className={classes.button}   > Talleres </button> 
-        <button className={classes.button}   > Contacto </button> 
+        <Image src="/MadeIn.png" alt="Vercel Logo" width={200} height={140} style={{borderRadius:"50%"}} />
+        
+          <button className={classes.button}   > Inicio </button>
+          <button className={classes.button}   > Productos </button>
+          <button className={classes.button}   > Talleres </button>
+          <button className={classes.button}   > Contacto </button>
 
            {/* <button className={classes.button}  onClick ={enLanguageHandler} > {Language} </button> 
            */}
