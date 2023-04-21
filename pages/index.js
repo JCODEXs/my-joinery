@@ -25,7 +25,7 @@ const [images,setImages] = useState()
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main} style={{background : "rgb(30,45,60,0.4)"}}>
+      <main className={styles.main} style={{background : "rgb(30,145,60,0.4)"}}>
         <Header/>
         <div>
           <h1 className={styles.title}>

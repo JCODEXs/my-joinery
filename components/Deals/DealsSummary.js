@@ -15,8 +15,8 @@ const DealsSummary = () => {
   En nuestro taller, contamos con un equipo de diseñadores y artesanos altamente capacitados que trabajan juntos para crear muebles a medida que se adaptan perfectamente a sus necesidades y gustos. Nos enorgullece ofrecer una amplia variedad de diseños y estilos, desde lo moderno y contemporáneo hasta lo rústico y tradicional.
   
   En nuestra página web, encontrará una galería de fotos de algunos de nuestros trabajos previos, lo que le dará una idea de lo que podemos hacer por usted.
-<p>Puede ponerse en contacto con nosotros para discutir sus ideas y solicitar un presupuesto personalizado.</p>
 </p> 
+<p>Puede ponerse en contacto con nosotros para discutir sus ideas y solicitar un presupuesto personalizado.</p>
 <a   aria-label="Chat on WhatsApp" href="https://wa.me/56995375560"> <Image alt="Chat on WhatsApp" src="WhatsAppButtonGreenLarge.svg" width = '150' height={60}/> </a>
 
       </div>

@@ -6,8 +6,8 @@ import Image from "next/image";
 
 
 const Header = (props) => {
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState(600);
+  const [height, setHeight] = useState(800);
   
 
    const [Language,setLanguage] = useState('English')
@@ -73,33 +73,31 @@ useEffect(()=>{
 
  
   return (
+    
     <Fragment>
-      <header id="my-div" className={classes.header}>
-        <div style={{borderRadius:"50%",zIndex:"11"}}>
-          <Image src="/MadeIn.png" alt="Vercel Logo" width={200} height={140} style={{borderRadius:"50%",zIndex:"9"}} />
+      <div style={{display:"flex",justifyContent:"center",flexDirection:"column",alignItems: "center"}}>
+        
+        <div id="my-image">
+          <Image src="/MadeIn.png" alt="Vercel Logo" width={300} height={250} />
         </div>
-        <div style={{borderRadius:"50%",minWidth:"10rem",maxWidth:"45rem",display:"flex",flexDirection:"row",flexWrap:"wrap"}}>
-            
-              <button className={classes.button}   > Inicio </button>
-              <button className={classes.button}   > Productos </button>
-              <button className={classes.button}   > Talleres </button>
-              <button className={classes.button}   > Contacto </button>
-          </div>
-           {/* <button className={classes.button}  onClick ={enLanguageHandler} > {Language} </button> 
-           */}
-         {/* <Menubar className={classes.menubar}/> */}
-        {/* <HeaderCartButton onClick={props.onShowCart} Lengua={Language} /> */}
-
-      </header>
-
-           <div className={classes["main-image"]}>
-                <Image src={"/herramientas2.jpg"} width={800} height={450}alt="goods and services" />
-          </div>
-
+            <div id="my-div">
+        <div style={{borderRadius:"50%",minWidth:"10rem",maxWidth:"45rem",display:"flex",flexDirection:"row",flexWrap:"wrap" ,position:"sticky"}}>
+          <button className={classes.button}>Inicio</button>
+          <button className={classes.button}>Productos</button>
+          <button className={classes.button}>Talleres</button>
+          <button className={classes.button}>Contacto</button>
+        </div>
+            </div>
+            <div className={classes["main-image"]}>
+        <Image src={"/herramientas2.jpg"} width={800} height={450} alt="goods and services" />
+            </div>
+      </div>
+  </Fragment>
+  
+    );
     
-    
-    </Fragment>
-  );
+
+     
 };
 
 export default Header;
