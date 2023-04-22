@@ -25,10 +25,11 @@ const [images,setImages] = useState()
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main} style={{background : "rgb(30,145,60,0.4)"}}>
+      <main className={styles.main} style={{backgroundColor : "rgb(30,145,60,0.1)",zIndex:"-20"}}>
         <Header/>
         <div>
           <h1 className={styles.title}>
+          <div style={{zIndex:"5",marginBottom:"10rem",padding:"6rem",fontSize:"2.7rem",color:"#078FA1"}} >Bienvenidos a Maderafi  diseño y fabricación de muebles de madera y acero!</div>
            {/* // <Image src="/MadeIn.png" alt="Vercel Logo" width={300} height={190} /> */}
             </h1>
         </div>

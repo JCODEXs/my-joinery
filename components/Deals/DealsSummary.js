@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const DealsSummary = () => {
   return (
-    <section className={classes.summary}>
-      <h2> Bienvenidos a Maderafi  diseño y fabricación de muebles de madera y acero! </h2>
+    <div style={{marginBottom:"2rem"}} className={classes.summary}>
+     
    
-      <div style={{background:"rgb(20,30,60,0.35)",width:"90%",position:"relative",fontSize:"1.2rem" ,borderRadius:"5px", justifyContent:"left"}}>
+      <div style={{background:"rgb(20,30,60,0.35)",width:"90%",position:"relative",fontSize:"1.2rem" ,borderRadius:"5px", justifyContent:"center",padding:"0.7rem"}}>
    Si está buscando muebles de alta calidad y diseño personalizado, no busque más allá de nuestra empresa. ¡Estamos ansiosos por trabajar con usted para crear muebles que complementen su hogar u oficina de la mejor manera posible!
 
 <p>
@@ -21,7 +21,7 @@ const DealsSummary = () => {
 
       </div>
      
-    </section>
+    </div>
   );
 };
 
