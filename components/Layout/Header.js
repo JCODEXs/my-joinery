@@ -71,7 +71,7 @@ useEffect(()=>{
           
         </div>
         <div id="my-div">
-        <div style={{borderRadius:"50%",minWidth:"10rem",display:"flex",flexDirection:"row",flexWrap:"wrap" ,position:"sticky"}}>
+        <div style={{borderRadius:"50%",minWidth:"10rem",display:"flex",flexDirection:"row",flexWrap:"wrap" ,position:"sticky",zIndex:2}}>
           <button className={classes.button}>Inicio</button>
           <button className={classes.button}>Productos</button>
           <button className={classes.button}>Talleres</button>
