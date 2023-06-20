@@ -16,9 +16,10 @@ RUN npm run build
 ENV NODE_ENV production
 RUN npm cache clean --force
 # ENV HOST=0.0.0.0
-# EXPOSE 443
-# EXPOSE 1234
-# EXPOSE 8080
+ EXPOSE 443
+ EXPOSE 80
+ EXPOSE 1234
+ EXPOSE 8080
 # Running the app
 # CMD ["npm","run","wsserver"]
 CMD [ "npm", "start"]

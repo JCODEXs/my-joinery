@@ -1,3 +1,4 @@
+import Image from "next/image";
 import classes from "./DealsSummary.module.css";
 
 const AboutUs = () => {
@@ -15,7 +16,7 @@ const AboutUs = () => {
         pagado antes de su vencimiento, nunca vencido!
       </p>
       <p>Contactanos para Mayor informacion</p>
-      <a width = '50px'  aria-label="Chat on WhatsApp" href="https://wa.me/17076139802"> <img alt="Chat on WhatsApp" src="WhatsAppButtonGreenLarge.svg" /> </a>
+      <a width = '50px'  aria-label="Chat on WhatsApp" href="https://wa.me/17076139802"> <Image alt="Chat on WhatsApp" src="WhatsAppButtonGreenLarge.svg" /> </a>
     </section>
   );
 };

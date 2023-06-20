@@ -1,30 +1,50 @@
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 7rem;
-  background-color: #bd9009;
+#my-image {
+  width: 12rem;
+  height: 5rem;
+  border-radius: 40%;
+  background-color: #0a8c8c;
   color: white;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  padding: 0 2%;
+  justify-content: center;
+  padding: 1rem;
+  margin: 2rem ;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  z-index: 10;
+  z-index: 2;
+  position: relative;
+  margin-top: 4rem; 
+
+}
+
+#my-div {
+  width: 100%;
+  height: 6rem;
+  height: 6rem;
+  margin-bottom: 3rem;
+  background-color: #0a8c8c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+  position: sticky;
+  top: 0;
 }
 
 .main-image {
   width: 100%;
-  height: 45rem;
+  height: 25rem;
   z-index: 0;
   overflow: hidden;
 }
 
 .main-image img {
   width: 110%;
-  height: 56%;
-  object-fit: cover;
+  height: 100%;
+  object-fit:cover;
   transform: rotateZ(-5deg) translateY(-2rem) translateX(-1rem);
 }
 
@@ -32,14 +52,18 @@
   cursor: pointer;
   font: inherit;
   border: none;
-  background-color: #0035a6;
+  background-color: #A14600;
   color: white;
   padding: 0.75rem 1rem;
+  margin: 0.5rem;
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  cursor: pointer;
+  justify-content: space-around;
   border-radius: 25px;
-  /* font-weight: bold; */
+  z-index: 10;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .button:hover,

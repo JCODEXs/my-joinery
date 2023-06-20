@@ -1,12 +1,14 @@
 import { Fragment, useEffect, useState} from "react";
- import HeaderCartButton from "./HeaderCartButton";
-import backImage from "../../assets/growmoney.jpg";
+import HeaderCartButton from "./HeaderCartButton";
 import classes from "./Header.module.css";
+import Image from "next/image";
 
 
 
 const Header = (props) => {
- 
+  const [width, setWidth] = useState(600);
+  const [height, setHeight] = useState(300);
+  
 
    const [Language,setLanguage] = useState('English')
 
@@ -40,32 +42,54 @@ useEffect(()=>{
       }
       else if(Language==='Español'){
        props.handleLanguageTrue()
-     
-      }
-   
-  }
-  
+           }
+     }
+  useEffect(() => {
+    function setDivHeight() {
+    const div = document.querySelector('#my-div');
+    const width = div.offsetWidth; 
+    const height = 1200 / width;
+    setWidth(width);
+    setHeight(height);}
+    setDivHeight();
+    window.addEventListener('resize', setDivHeight); 
+      return () => {
+      window.removeEventListener('resize', setDivHeight);
+    }
+  }, []);
 
+  useEffect(() => {
+    const div = document.querySelector('#my-div'); 
+    div.style.setProperty('height', `${height}px`); 
+       }, [height]);
   return (
-    <Fragment>
-      <header className={classes.header}>
-        <h1>Book Keeping</h1> 
-
-           <button className={classes.button}  onClick ={enLanguageHandler} > {Language} </button> 
+        <Fragment>
+      <div style={{display:"flex",justifyContent:"center",flexDirection:"column",alignItems: "center"}}>
+                <div id="my-image">
+                  
+          <Image src="/MadeIn.png" alt="Vercel Logo" width={300} height={250} style={{borderRadius:"45%",margin:"2rem"}}/>
           
-         {/* <Menubar className={classes.menubar}/> */}
-        <HeaderCartButton onClick={props.onShowCart} Lengua={Language} />
-
-      </header>
-
-           <div className={classes["main-image"]}>
-                <img src={backImage} alt="goods and services" />
-          </div>
-
+        </div>
+        <div id="my-div">
+        <div style={{borderRadius:"50%",minWidth:"10rem",display:"flex",flexDirection:"row",flexWrap:"wrap" ,position:"sticky",zIndex:2}}>
+          <button className={classes.button}>Inicio</button>
+          <button className={classes.button}>Productos</button>
+          <button className={classes.button}>Talleres</button>
+          <button className={classes.button}>Contacto</button>
+        </div>
+         </div>
+            <div className={classes["main-image"]}>
+              
+        <Image src={"/herramientas2.jpg"} width={800} height={450} alt="goods and services" />
+         
+            </div>
+      </div>
+  </Fragment>
+  
+    );
     
-    
-    </Fragment>
-  );
+
+     
 };
 
 export default Header;

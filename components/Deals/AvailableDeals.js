@@ -12,15 +12,15 @@ const AvailableDeals = () => {
 useEffect(()=>{
   setDeals([{
     id:1,
-    name:'Basic',
-    description:'Personal for a Year',
-    price:500,
+    name:'Repisas',
+    description:'Hechas en madera',
+    price:500000,
   },
   {
     id:2,
-    name:"Small Busines",
-    description:'"Small Busines for a Year',
-    price:1500,
+    name:"Cama",
+    description:'"Hechas en madera',
+    price:1500000,
   }
 
 ])
