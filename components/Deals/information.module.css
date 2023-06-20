@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* Other container styles */
+}
+
+.content {
+    /* Styles for your content */
+}
