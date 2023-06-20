@@ -3,8 +3,8 @@ import classes from "./information.module.css";
 
 export default function Information() {
   return (
-    <div className="classes.container">
-      <div className="classes.content">
+    <div className={classes.container}>
+      <div className={classes.content}>
         Somos una empresa dedicada a la creación de muebles únicos y
         personalizados para nuestros clientes. Utilizamos materiales de alta
         calidad, como la madera y las resinas, para crear piezas duraderas y

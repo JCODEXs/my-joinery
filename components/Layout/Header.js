@@ -62,15 +62,6 @@ const Header = (props) => {
           alignItems: "center",
         }}
       >
-        <div id="my-image">
-          <Image
-            src="/MadeIn.png"
-            alt="Vercel Logo"
-            width={300}
-            height={250}
-            style={{ borderRadius: "45%", margin: "2rem" }}
-          />
-        </div>
         <div id="my-div">
           <div
             style={{
@@ -116,6 +107,15 @@ const Header = (props) => {
               Contacto
             </button>
           </div>
+        </div>
+        <div id="my-image">
+          <Image
+            src="/MadeIn.png"
+            alt="Vercel Logo"
+            width={300}
+            height={250}
+            style={{ borderRadius: "45%", margin: "1rem" }}
+          />
         </div>
         <div className={classes["main-image"]}>
           <Image

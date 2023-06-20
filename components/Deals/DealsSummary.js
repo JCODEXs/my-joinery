@@ -10,10 +10,10 @@ const DealsSummary = () => {
           display: "flex",
           flexDirection: "column",
           width: "95%",
-
+          display: "flex",
           fontSize: "1.2rem",
           borderRadius: "5px",
-          justifyContent: "space-between",
+          //  justifyContent: "space-between",
           padding: "0.7rem",
         }}
       >
@@ -23,19 +23,18 @@ const DealsSummary = () => {
         manera posible!
         <div
           style={{
-            marginTop: "0.5rem",
+            marginTop: "0.8rem",
             width: "99%",
             display: "flex",
             fontSize: "1.2rem",
             borderRadius: "5px",
-            justifyContent: "space-between",
+            //justifyContent: "space-between",
             //padding: "0.2rem",
           }}
         >
           Somos una empresa dedicada a la creación de muebles únicos y
           personalizados para nuestros clientes. Utilizamos materiales de alta
           calidad, como la madera y las resinas, para crear piezas duraderas y
-          hermosas que complementarán cualquier espacio en su hogar u oficina.
           En nuestro taller, contamos con un equipo de diseñadores y artesanos
           altamente capacitados que trabajan juntos para crear muebles a medida
           que se adaptan perfectamente a sus necesidades y gustos. Nos
