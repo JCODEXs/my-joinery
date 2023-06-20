@@ -14,9 +14,7 @@ const HomePage = () => {
         <DealsSummary />
       </Section>
 
-      <Section>
-        <DealsSummary />
-      </Section>
+      <Section></Section>
 
       <style jsx>{`
         .section {
