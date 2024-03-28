@@ -20,7 +20,6 @@
 #my-div {
   width: 100%;
   height: 6rem;
-  height: 6rem;
   margin-bottom: 3rem;
   background-color: #0a8c8c;
   color: white;
@@ -34,12 +33,36 @@
   top: 0;
 }
 
+
+@media screen and (max-width: 768px) {
+  #my-div {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  #my-div > div {
+    margin-bottom: 1rem;
+  }
+
+  #my-div > div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+#header{
+  background-image: url("/herramientas2.jpg");
+  width:800px;
+  height:450px;
+}
 .main-image {
   width: 100%;
-  height: 25rem;
+  height: 8rem;
   z-index: 0;
   overflow: hidden;
 }
+
 
 .main-image img {
   width: 110%;
@@ -52,7 +75,7 @@
   cursor: pointer;
   font: inherit;
   border: none;
-  background-color: #A14600;
+  background-color: #D95F18;
   color: white;
   padding: 0.75rem 1rem;
   margin: 0.5rem;
@@ -68,5 +91,10 @@
 
 .button:hover,
 .button:active {
-  background-color: #097ebd;
+  background-color: #593122;
+}
+
+.title{
+  color:#593122
+
 }

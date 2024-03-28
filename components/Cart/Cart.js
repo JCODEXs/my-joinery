@@ -42,18 +42,18 @@ const Cart = (props) => {
   const modalActions = (
     <div className={classes.actions}>
       <button className={classes["button--alt"]} onClick={props.onClose}>
-        Close
+        cerrar
       </button>
-      
+     
     </div>
   );
 
   const contactInfo= (
     <div className={classes.contactInfo}>
-      <h2>  Analia Richie </h2> 
+      <h2> Rafael Vega </h2> 
 
       <p>
-        (+1) 707 613 9802
+        (+1) 56 995 375 560
       </p>
     </div>
   )
