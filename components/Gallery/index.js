@@ -1,25 +1,24 @@
+import { useState, useLayoutEffect, useEffect } from "preact/hooks";
 
-import { useState, useLayoutEffect, useEffect } from 'preact/hooks';
-
-import ModelInfo from 'components/modelInfo';
-import Gallery from './secondGallery';
-import moment from 'moment';
-import Image from 'next/image';
+import ModelInfo from "components/modelInfo";
+import Gallery from "./secondGallery";
+import moment from "moment";
+import Image from "next/image";
 export default function FullJasmin() {
   const [pic, setPic] = useState(undefined);
   const [vip, setVip] = useState(undefined);
   const [report, setReport] = useState(undefined);
   const { selected } = useSelected();
-  useLayoutEffect(async () => {
+  useLayoutEffect(() => {
     setPic(undefined);
     setVip(undefined);
     setReport(undefined);
   }, [selected]);
-  useLayoutEffect(async () => {
+  useLayoutEffect(() => {
     setReport(undefined);
     // alert('new Report');
     try {
-      const result = await axios.get('/api/vipShows', {
+      const result = axios.get("/api/vipShows", {
         params: {
           screenName: model.screenName,
           fromDate: period.startDate,
@@ -28,17 +27,16 @@ export default function FullJasmin() {
       });
       setVip(result.data.vip);
       setReport(result.data.report);
-      console.log('vip: ', result.data);
+      console.log("vip: ", result.data);
     } catch (e) {
       // alert('error');
-      console.log('err: ', e);
+      console.log("err: ", e);
     }
   }, [period]);
   // let vip;
   const getVip = () => {};
   useEffect(async () => {
     if (report) {
-   
     }
   }, [report]);
   {
@@ -48,7 +46,7 @@ export default function FullJasmin() {
     <>
       {model && (
         <div style="max-width:100%;position:relative;display:flex;flex-direction:column;min-height:100%;max-height:100%;overflow:hidden;">
-                <div
+          <div
             style="
           flex:1;
           position:relative;
@@ -152,12 +150,8 @@ filter: drop-shadow(0 0 0.75rem black);
                     </div>
                   </div>
                   {/* <div> {JSON.stringify(period, null, 2)}</div> */}
-           
                 </div>
-                {report && false && (
-                  <div style="padding:10px;">
-                            </div>
-                )}
+                {report && false && <div style="padding:10px;"></div>}
                 <div
                   style="
 		      overflow:hidden;

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Gallery({ images }) {
   const containerRef = useRef(null);
@@ -93,8 +94,7 @@ export default function Gallery({ images }) {
     overflow: "hidden",
     padding: "5px",
     minWidth: "max-content",
-    // border: "solid -2px rgba(200,200,200,0.1)",
-    margin: "0.7rem",
+    border: "solid -2px rgba(200,200,200,0.1)",
     scrollX: "",
   };
 

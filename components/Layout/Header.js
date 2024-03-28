@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import HeaderCartButton from "./HeaderCartButton";
 import classes from "./Header.module.css";
 import Image from "next/image";

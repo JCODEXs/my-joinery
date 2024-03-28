@@ -1,13 +1,12 @@
 .summary {
-  text-align: center;
+  text-align: space-between;
   display: flex;
   align-items: center;
   flex-direction: column;
   max-width: 55rem;
   width: 95%;
+  justify-content: space-between;
   margin: auto;
-  margin-top: -10rem;
-  position: relative;
   background-image: url('/maderas1.jpg');
   background-color: #6b421c; 
   color: white;
