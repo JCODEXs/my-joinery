@@ -45,9 +45,9 @@
 }
 
 .title {
-  margin: 0;
+  margin: 0.8rem;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 1.4rem;
 }
 
 .title,
@@ -132,3 +132,24 @@
     filter: invert(1);
   }
 }
+  @keyframes InputAnimation {
+    0% {
+     color:#090f09/* Initial background color */
+  }
+  70% {
+     /* Color transition midpoint */
+    transform: scale(1.15); /* Slightly scale up */
+    color:#593122
+  }
+  100% {
+    
+  }
+}
+  .callToaction{
+    font-size: 1.3rem;
+    animation: InputAnimation 4s infinite;
+    margin:2rem;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+  }

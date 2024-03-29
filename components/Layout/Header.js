@@ -1,22 +1,26 @@
 import { Fragment, useEffect, useState } from "react";
-import { Fragment, useEffect, useState } from "react";
 import HeaderCartButton from "./HeaderCartButton";
 import classes from "./Header.module.css";
 import Image from "next/image";
 
-const Header = (props) => {
+const Header = ({
+  handleLanguageFalse,
+  handleLanguageTrue,
+  isEnglish,
+  contactRef,
+}) => {
   const [width, setWidth] = useState(600);
   const [height, setHeight] = useState(300);
 
   const [Language, setLanguage] = useState("English");
 
   useEffect(() => {
-    if (props.isEnglish) {
+    if (isEnglish) {
       setLanguage("English");
-    } else if (!props.isEnglish) {
+    } else if (!isEnglish) {
       setLanguage("Español");
     }
-  }, [props.isEnglish]);
+  }, [isEnglish]);
 
   // const eLanguageHandler=useCallback(()=>{
   //   setLengua('Español')
@@ -25,11 +29,11 @@ const Header = (props) => {
 
   const enLanguageHandler = (event) => {
     //event.preventDefault()
-    console.log(props);
+    // console.log(props);
     if (Language === "English") {
-      props.handleLanguageFalse();
+      handleLanguageFalse();
     } else if (Language === "Español") {
-      props.handleLanguageTrue();
+      handleLanguageTrue();
     }
   };
   useEffect(() => {
@@ -57,7 +61,7 @@ const Header = (props) => {
         id="header"
         style={{
           backgroundImage: 'url("/herramientas2.jpg")',
-          height: "167px",
+          height: "99px",
           width: "auto",
           display: "flex",
           justifyContent: "space-around",
@@ -70,9 +74,9 @@ const Header = (props) => {
           <Image
             src="/MadeIn.png"
             alt="Vercel Logo"
-            width={150}
-            height={130}
-            style={{ borderRadius: "45%", margin: "0.1rem", zIndex: 3 }}
+            width={140}
+            height={122}
+            style={{ borderRadius: "45%", margin: "0.5rem", zIndex: 3 }}
           />
         </div>
         <div id="my-div">
@@ -84,12 +88,19 @@ const Header = (props) => {
               position: "sticky",
               zIndex: 2,
               alignItems: "center",
+              justifyContent: "flex-end",
+
+              margin: "0.5rem",
             }}
           >
-            <button className={classes.button}>Inicio</button>
-            <button className={classes.button}>Productos</button>
-            <button className={classes.button}>Talleres</button>
-            <button className={classes.button}>Contacto</button>
+            <button onClick={() => {}} className={classes.button}>
+              Productos
+            </button>
+            {/* <button className={classes.button}>Talleres</button> */}
+            <button onClick={() => contactRef()} className={classes.button}>
+              Contacto
+            </button>
+            <HeaderCartButton onClick={() => console.log("hes")} />
           </div>
         </div>
       </div>

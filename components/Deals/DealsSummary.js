@@ -7,20 +7,26 @@ const DealsSummary = () => {
     <div style={{ marginBottom: "2rem" }} className={styles.summary}>
       <div
         style={{
+          display: "flex",
+          flexDirection: "column",
           background: "rgb(20,30,60,0.35)",
-          width: "90%",
+          width: "98%",
           position: "relative",
           fontSize: "1.2rem",
           borderRadius: "5px",
           justifyContent: "center",
           padding: "0.7rem",
+          marginBottom: "0.5rem",
         }}
       >
-        Si está buscando muebles de alta calidad y diseño personalizado, no
-        busque más allá de nuestra empresa. ¡Estamos ansiosos por trabajar con
-        usted para crear muebles que complementen su hogar u oficina de la mejor
-        manera posible! mira nuestros{" "}
+        <p>
+          Si está buscando muebles de alta calidad y diseño personalizado, no
+          busque más allá de nuestra empresa. ¡Estamos ansiosos por trabajar con
+          usted para crear muebles que complementen su hogar u oficina de la
+          mejor manera posible!{" "}
+        </p>
         <button className={styles.button}>Diseños</button>
+
         <p>
           Somos una empresa dedicada a la creación de muebles únicos y
           personalizados para nuestros clientes. Utilizamos materiales de alta
@@ -30,24 +36,9 @@ const DealsSummary = () => {
           altamente capacitados que trabajan juntos para crear muebles a medida
           que se adaptan perfectamente a sus necesidades y gustos. Nos
           enorgullece ofrecer una amplia variedad de diseños y estilos, desde lo
-          moderno y contemporáneo hasta lo rústico y tradicional. En nuestra
-          página web, encontrará una galería de fotos de algunos de nuestros
-          trabajos previos, lo que le dará una idea de lo que podemos hacer por
-          usted.
+          moderno y contemporáneo hasta lo rústico y tradicional.
         </p>
-        <p>
-          Puede ponerse en contacto con nosotros para discutir sus ideas y
-          solicitar un presupuesto personalizado.
-        </p>
-        <a aria-label="Chat en WhatsApp" href="https://wa.me/56995375560">
-          {" "}
-          <Image
-            alt="Chat en WhatsApp"
-            src="WhatsAppButtonGreenLarge.svg"
-            width="170"
-            height={80}
-          />{" "}
-        </a>
+
         <div className={styles.resin} />
       </div>
     </div>

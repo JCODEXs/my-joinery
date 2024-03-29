@@ -6,17 +6,21 @@ Files: woodscene.gltf [76.5KB] > /home/juan/Documents/new Database/newProject/Ja
 
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-
+import { useAnimationFrame } from "framer-motion";
 export function WoodScene(props) {
   const { nodes, materials } = useGLTF("./woodscene-transformed.glb");
+  const group = useRef();
+  useAnimationFrame((state, delta) => {
+    group.current.rotation.y += 0.00015 * delta;
+  });
   return (
-    <group {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null}>
       <mesh
         geometry={nodes.Wood_chair.geometry}
         material={materials["brown wood"]}
         position={[2.273, 0.084, -2.852]}
       />
-      <mesh
+      {/* <mesh
         geometry={nodes.Bolt_1.geometry}
         material={materials.PaletteMaterial001}
         position={[0.131, 0, -0.734]}
@@ -25,13 +29,13 @@ export function WoodScene(props) {
         geometry={nodes.Part_1.geometry}
         material={materials.Wood}
         position={[0.131, 0, -0.734]}
-      />
-      <mesh
+      /> */}
+      {/* <mesh
         geometry={nodes.assise002.geometry}
         material={materials["Material.002"]}
         position={[-1.089, 0.322, -1.735]}
         scale={[1.015, 1, 0.993]}
-      />
+      /> */}
       <mesh
         geometry={nodes.banquette001.geometry}
         material={materials["Material.001"]}
@@ -55,12 +59,12 @@ export function WoodScene(props) {
         position={[-1.81, 0.327, -0.973]}
         rotation={[Math.PI / 2, -1.414, Math.PI / 2]}
       />
-      <mesh
+      {/* <mesh
         geometry={nodes.Levelers.geometry}
         material={materials.PaletteMaterial005}
         position={[0.955, 0.005, -3.947]}
         rotation={[0, Math.PI / 2, 0]}
-      />
+      /> */}
       <mesh
         geometry={nodes.Table.geometry}
         material={materials["Teak wood polished"]}

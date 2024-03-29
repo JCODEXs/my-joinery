@@ -12,7 +12,7 @@ export function Desk(props) {
   const { nodes, materials } = useGLTF("/desk2d-transformed.glb");
   const group = useRef();
   useAnimationFrame((state, delta) => {
-    group.current.rotation.y += 0.0005 * delta;
+    group.current.rotation.y += 0.00055 * delta;
   });
   return (
     <group ref={group} {...props} dispose={null}>
@@ -21,8 +21,8 @@ export function Desk(props) {
         receiveShadow
         geometry={nodes.Wood_Desk.geometry}
         material={materials["Material.002"]}
-        position={[0, -0.22, -0.01]}
-        scale={1.3}
+        position={[-0.051, -0.219, -0.01]}
+        scale={1.4}
       />
     </group>
   );

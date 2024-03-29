@@ -4,7 +4,8 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import Loader from "../Loader";
 import { Desk } from "../../public/models/desk3d";
-const Background = () => {
+import { WoodScene } from "../../public/models/Woodscene";
+const BackgroundSoft = () => {
   const adjustSceneForScreen = () => {
     let screenScale;
     let screenPosition = [2, 0, 0];
@@ -23,13 +24,13 @@ const Background = () => {
   return (
     <Canvas
       style={{
-        height: "331px",
+        height: "531px",
         position: "relative",
         top: 0,
         left: 0,
-        zIndex: 10,
+        zIndex: 1,
       }}
-      camera={{ near: 1, far: 400, position: [12, 4, 4] }}
+      camera={{ near: 10, far: 400, position: [12, 4, 4] }}
     >
       <Suspense fallback={<Loader />}>
         <directionalLight position={[1, 1, 10]} intensity={2} />
@@ -52,7 +53,7 @@ const Background = () => {
     scale={[4,4,3]}
     rotation={[0,0,0]}
     /> */}
-        <Desk
+        <WoodScene
           position={screenPosition}
           scale={[7, 7, 7]}
           rotation={[0, -20, 0]}
@@ -62,4 +63,4 @@ const Background = () => {
   );
 };
 
-export default Background;
+export default BackgroundSoft;

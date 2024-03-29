@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { useEffect, useRef, useState } from "react";
 
 export default function Gallery({ images }) {
   const containerRef = useRef(null);
@@ -127,7 +126,7 @@ export default function Gallery({ images }) {
         }}
       >
         {images.map((image, index) => (
-          <div key={index} style={{ border: "1px solid rgb(191, 174, 153)" }}>
+          <div key={index}>
             <div style={imageLabelStyle}>
               {/* <div>{ `$ ${100000*index+300000*Math.random(1).toFixed(1)}`} </div> */}
             </div>
@@ -137,7 +136,7 @@ export default function Gallery({ images }) {
                   //onClick={(e) => action(e, image)}
                   alt="product"
                   quality={95}
-                  height={320}
+                  height={350}
                   width={250}
                   priority={true}
                   src={image}
