@@ -74,19 +74,19 @@
 
 .button {
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border: none;
   background-color:  #593122;
   color: white;
-  padding: 0.75rem 1rem;
-  margin: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  margin: 0.35rem;
   display: flex;
   align-items: center;
   cursor: pointer;
   justify-content: space-around;
   border-radius: 25px;
   z-index: 10;
-  font-weight: bold;
+  font-weight: 500;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 

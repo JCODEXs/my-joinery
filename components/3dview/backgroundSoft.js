@@ -30,7 +30,7 @@ const BackgroundSoft = () => {
         left: 0,
         zIndex: 1,
       }}
-      camera={{ near: 10, far: 400, position: [12, 4, 4] }}
+      camera={{ near: 2, far: 300, position: [10, 3, 7] }}
     >
       <Suspense fallback={<Loader />}>
         <directionalLight position={[1, 1, 10]} intensity={2} />

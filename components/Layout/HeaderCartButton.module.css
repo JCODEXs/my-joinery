@@ -4,7 +4,7 @@
   border: none;
   background-color:#A6774E;
   color: white;
-  padding: 0.75rem 1rem;
+  padding: 0.55rem .75rem;
   display: flex;
   align-items: center;
   /* justify-content: space-around; */
@@ -26,9 +26,9 @@
 
 .badge {
   background-color: #FF4616;
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 0.7rem;
   border-radius: 25px;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   font-weight: bold;
 }
 

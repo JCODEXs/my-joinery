@@ -15,11 +15,11 @@ export function WoodScene(props) {
   });
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh
+      {/* <mesh
         geometry={nodes.Wood_chair.geometry}
         material={materials["brown wood"]}
         position={[2.273, 0.084, -2.852]}
-      />
+      /> */}
       {/* <mesh
         geometry={nodes.Bolt_1.geometry}
         material={materials.PaletteMaterial001}

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Gallery from "../components/Gallery/secondGallery";
 import DealsSummary from "../components/Deals/DealsSummary";
 import AvailableDeals from "../components/Deals/AvailableDeals";
@@ -9,6 +9,7 @@ import Header from "../components/Layout/Header";
 import Background from "../components/3dview/viewPort";
 import BackgroundSoft from "../components/3dview/backgroundSoft";
 import ContactForm from "../components/contact-form/contactForm";
+import ComposedContactForm from "../components/contact-form/composedContactForm";
 
 export default function Home() {
   const [images, setImages] = useState();
@@ -19,10 +20,10 @@ export default function Home() {
       .catch((error) => console.error(error));
   }, []);
   // console.log(images);
-  const servicesRef = useRef(null);
+  const [formRef, setFormRef] = useState(null);
 
   const scrollToRef = () => {
-    servicesRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    formRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
   return (
@@ -55,36 +56,7 @@ export default function Home() {
           {/* // <Image src="/MadeIn.png" alt="Vercel Logo" width={300} height={190} /> */}
         </div>
         <DealsSummary />
-        <div
-          style={{
-            height: "580px",
-            display: "flex",
-            position: "relative",
-            width: "100%",
-            // marginBottom: "1rem",
-          }}
-        >
-          <BackgroundSoft />
-          <div
-            style={{
-              display: "flex",
-              width: "98%",
-              maxWidth: "65rem",
-              zIndex: 20,
-              position: "absolute",
-              fontSize: "1rem",
-              top: 10,
-              backgroundColor: "rgba(255, 255, 255, 0.6)",
-              padding: "23px",
-              borderRadius: "10px",
-              left: "50%",
-              transform: "translateX(-50%)",
-            }}
-            ref={servicesRef}
-          >
-            <ContactForm />
-          </div>
-        </div>
+        <ComposedContactForm setFormRef={setFormRef} />
         {
           <div>
             {/* <pre>{JSON.stringify(images,null,2)}</pre> */}
@@ -92,6 +64,28 @@ export default function Home() {
             {false && <AvailableDeals />}
           </div>
         }
+        <a
+          style={{
+            position: "fixed",
+            bottom: "1.2rem",
+            right: "1.7rem",
+            zIndex: 100,
+          }}
+          target="_blank"
+          rel="noopener noreferrer"
+          width="50px"
+          aria-label="Chat on WhatsApp"
+          href="https://wa.me/56995375560"
+        >
+          {" "}
+          <Image
+            alt="Chat on WhatsApp"
+            src="/linechat.png"
+            width={60}
+            height={60}
+          />{" "}
+        </a>
+        ;
       </main>
 
       <footer className={styles.footer}>

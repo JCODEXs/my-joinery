@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import HeaderCartButton from "./HeaderCartButton";
 import classes from "./Header.module.css";
 import Image from "next/image";
-
+import { useRouter } from "next/router";
 const Header = ({
   handleLanguageFalse,
   handleLanguageTrue,
@@ -11,7 +11,11 @@ const Header = ({
 }) => {
   const [width, setWidth] = useState(600);
   const [height, setHeight] = useState(300);
+  const router = useRouter();
 
+  const handleClick = () => {
+    router.push("/productos");
+  };
   const [Language, setLanguage] = useState("English");
 
   useEffect(() => {
@@ -93,7 +97,7 @@ const Header = ({
               margin: "0.5rem",
             }}
           >
-            <button onClick={() => {}} className={classes.button}>
+            <button onClick={() => handleClick()} className={classes.button}>
               Productos
             </button>
             {/* <button className={classes.button}>Talleres</button> */}

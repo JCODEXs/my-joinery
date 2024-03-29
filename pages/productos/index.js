@@ -19,7 +19,7 @@ const Productos = () => {
     <div>
       <HeaderCartButton onClick={showCartHandler} />
       <Cart />
-      {/* <AvailableDeals /> */}
+      <AvailableDeals />
       <div id="overlays">hg</div>
     </div>
   );

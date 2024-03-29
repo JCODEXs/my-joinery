@@ -92,7 +92,7 @@
   } */
   
   .form button:hover {
-    background-color: var(--color-primary-500);
+    background-color: #D95F18;
     border-color: var(--color-primary-500);
   }
   
@@ -146,7 +146,7 @@
    cursor: pointer;
   font: inherit;
   border: none;
-  background-color: #D95F18;
+  background-color:#593122;
   width: fit-content;
   align-self: center;
   color: white;
