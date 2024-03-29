@@ -1,35 +1,58 @@
-import { useContext } from 'react';
-import DealItemForm from './DealItemForm';
+import { useContext, useEffect, useState } from "react";
+import DealItemForm from "./DealItemForm";
 
-
-import classes from './MealItem.module.css';
-import CartContext from '../../../store/cart-context';
+import classes from "./MealItem.module.css";
+import CartContext from "../../../store/cart-context";
+import Image from "next/image";
 
 const DealItem = (props) => {
   const cartCtx = useContext(CartContext);
+  console.log(props.src);
+  const price = `$${props.price}`;
 
-  const price = `$${props.price.toFixed(2)}`;
-
-  const addToCartHandler = amount => {
+  const addToCartHandler = (amount) => {
     cartCtx.addItem({
       id: props.id,
       name: props.name,
       amount: amount,
-      price: props.price
+      price: props.price,
     });
   };
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  // Agregar un event listener para detectar cambios en el tamaño de la ventana
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const imageSize = windowWidth < 415 ? 99 : 137;
+  const showDescription = windowWidth < 415 ? false : true;
   return (
     <li className={classes.meal}>
-      <div>
-        <h3>{props.name}</h3>
-        <div className={classes.description}>{props.description}</div>
-        <div className={classes.price}>{price}</div>
+      <div className={classes.dealAtributes}>
+        <div className={classes.image}>
+          <Image src={props.src} height={imageSize} width={imageSize} />
+        </div>
+        <div className={classes.dealDetails}>
+          <div>{props.name}</div>
+          {showDescription && (
+            <div className={classes.description}>{props.description}</div>
+          )}{" "}
+          <div className={classes.price}>{price}</div>
+        </div>
       </div>
       <div>
-      <DealItemForm onAddToCart={addToCartHandler} />
+        <DealItemForm onAddToCart={addToCartHandler} />
       </div>
-        </li>
+    </li>
   );
 };
 

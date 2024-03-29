@@ -10,6 +10,8 @@ import Background from "../components/3dview/viewPort";
 import BackgroundSoft from "../components/3dview/backgroundSoft";
 import ContactForm from "../components/contact-form/contactForm";
 import ComposedContactForm from "../components/contact-form/composedContactForm";
+import CartProvider from "../store/CartProvider";
+import Cart from "../components/Cart/Cart";
 
 export default function Home() {
   const [images, setImages] = useState();
@@ -25,7 +27,15 @@ export default function Home() {
   const scrollToRef = () => {
     formRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
   };
+  const [cartIsShown, setCartIsShown] = useState(false);
 
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -37,8 +47,13 @@ export default function Home() {
         className={styles.main}
         style={{ backgroundColor: "#BFAE99", zIndex: "-20" }}
       >
-        <Header contactRef={scrollToRef} />
-        <div>
+        <Header
+          showCartHandler={showCartHandler}
+          showContact={true}
+          contactRef={scrollToRef}
+        />
+        {cartIsShown && <Cart hideCartHandler={hideCartHandler} />}
+        <div style={{ marginTop: "99px" }}>
           <div className={styles.callToaction}>
             Diseño y fabricación de muebles de madera y acero!{" "}
           </div>
@@ -88,17 +103,6 @@ export default function Home() {
         ;
       </main>
 
-      <footer className={styles.footer}>
-        Powered by{" "}
-        <span className={styles.logo}>
-          <Image
-            src="/ColorMetta.png"
-            alt="Vercel Logo"
-            width={84}
-            height={100}
-          />
-        </span>
-      </footer>
       <div id="overlays"></div>
     </div>
   );

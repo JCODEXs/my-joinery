@@ -1,17 +1,15 @@
-import { useContext} from "react";
-
+"use client";
+import { useContext } from "react";
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
 import CartContext from "../../store/cart-context";
 
-
-const Cart = (props) => {
-
+const Cart = ({ hideCartHandler }) => {
   const cartCtx = useContext(CartContext);
+  console.log(cartCtx.items);
 
-  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
- 
+  const totalAmount = `Total: $${cartCtx.totalAmount}`;
 
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
@@ -21,13 +19,11 @@ const Cart = (props) => {
     cartCtx.addItem(item);
   };
 
-
- 
-
   const cartItems = (
     <ul className={classes["cart-items"]}>
       {cartCtx.items.map((item) => (
         <CartItem
+          description={item.description}
           key={item.id}
           name={item.name}
           amount={item.amount}
@@ -41,32 +37,34 @@ const Cart = (props) => {
 
   const modalActions = (
     <div className={classes.actions}>
-      <button className={classes["button--alt"]} onClick={props.onClose}>
+      <button
+        className={classes["button--alt"]}
+        onClick={() => {
+          hideCartHandler();
+        }}
+      >
         cerrar
       </button>
-     
     </div>
   );
 
-  const contactInfo= (
+  const contactInfo = (
     <div className={classes.contactInfo}>
-      <h2> Rafael Vega </h2> 
+      <h2> Rafael Vega </h2>
 
-      <p>
-        (+1) 56 995 375 560
-      </p>
+      <p>(+56) 995 375 560</p>
     </div>
-  )
+  );
 
-
- 
-   return (
-    <Modal onClose={props.onClose}>
-     {modalActions}
-     {cartItems}
-     {totalAmount}
-      {contactInfo}
-     
+  return (
+    <Modal onClose={hideCartHandler}>
+      {modalActions}
+      {cartItems}
+      <div className={classes.total}>
+        {" "}
+        {totalAmount}
+        {contactInfo}
+      </div>
     </Modal>
   );
 };

@@ -32,9 +32,9 @@ export default function Gallery({ images }) {
     const scrollContainer = () => {
       const { position, duration } =
         currentIndex < maxIndex - 1 ? scrollPositions?.[currentIndex + 1] : 0;
-      const container = containerRef.current;
-      const scrollWidth = container.scrollWidth - container.clientWidth;
-      const currentScrollPosition = container.scrollLeft;
+      const container = containerRef?.current;
+      const scrollWidth = container?.scrollWidth - container?.clientWidth;
+      const currentScrollPosition = container?.scrollLeft;
       const targetScrollPosition = currentIndex < maxIndex - 1 ? position : 0;
       const distance = targetScrollPosition - currentScrollPosition;
       const startTime = performance.now();
@@ -54,7 +54,7 @@ export default function Gallery({ images }) {
         }
       };
 
-      requestAnimationFrame(animateScroll);
+      container && requestAnimationFrame(animateScroll);
     };
 
     const easeOutQuart = (t) => 1 - (1 - t) ** 0.5;

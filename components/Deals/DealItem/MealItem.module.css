@@ -1,22 +1,35 @@
 .meal {
   display: flex;
   justify-content: space-between;
-  margin: 1rem;
-  padding-bottom: 1rem;
   border-bottom: 1px solid #ccc;
+  margin-bottom: 0.25rem;
+  
 }
 
 .meal h3 {
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.15rem 0;
 }
 
 .description {
   font-style: italic;
+  font-size: small;
 }
 
 .price {
   margin-top: 0.25rem;
   font-weight: bold;
-  color: #098117;
-  font-size: 1.25rem;
+  color: #7A2217;
+  font-size: 1rem;
+}
+.dealAtributes{
+  display: flex;
+  flex-direction: row;
+  }
+.image{
+  border: 1px solid #593122;
+  margin: 0.05rem;
+  border-radius: 5px;
+}
+.dealDetails{
+  margin: 0.5rem;
 }

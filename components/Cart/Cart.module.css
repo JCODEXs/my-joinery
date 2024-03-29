@@ -8,12 +8,14 @@
 
 .total {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-self: end;
+  /* align-items: center; */
   font-weight: bold;
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  color: #b32517;
+  font-size: 1.2rem;
+  margin: 1rem 2rem;
+  color: #D95F18;
 }
 
 .contactInfo{
@@ -22,19 +24,23 @@
   font-weight: bold;
   font-size: 1.5rem;
   margin: 0.6rem 0;
-  color: #3b0d66;
+  color: #A6774E;
 
+}
+.remove{
+  color:#3FAB90;
 }
 
 .actions {
   text-align: right;
+  color: #3FAB90;
 }
 
 .actions button {
   font: inherit;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #093fb3;
+  border: 1px solid #593122;
   padding: 0.5rem 1rem;
   border-radius: 25px;
   margin-left: 0.5rem;
@@ -42,13 +48,13 @@
 
 .actions button:hover,
 .actions button:active {
-  background-color: #033e5d;
-  border-color: #04669a;
+  background-color: #D95F18;
+  
   color: white;
 }
 
 .actions .button--alt {
-  background-color: #097ebd;
+  background-color: #593122;
   color: white;
 }
 

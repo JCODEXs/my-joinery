@@ -31,7 +31,7 @@
   }
   70% {
      /* Color transition midpoint */
-    transform: scale(1.1); /* Slightly scale up */
+    transform: scale(1.051); /* Slightly scale up */
     color:#A69C17
   }
   100% {

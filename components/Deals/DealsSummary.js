@@ -1,8 +1,11 @@
-import Scene3d from "../3dview/scene3d";
+import { useRouter } from "next/router";
 import styles from "./DealsSummary.module.css";
 import Image from "next/image";
-
 const DealsSummary = () => {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/productos");
+  };
   return (
     <div style={{ marginBottom: "2rem" }} className={styles.summary}>
       <div
@@ -25,7 +28,9 @@ const DealsSummary = () => {
           usted para crear muebles que complementen su hogar u oficina de la
           mejor manera posible!{" "}
         </p>
-        <button className={styles.button}>Diseños</button>
+        <button onClick={() => handleClick()} className={styles.button}>
+          Diseños
+        </button>
 
         <p>
           Somos una empresa dedicada a la creación de muebles únicos y
