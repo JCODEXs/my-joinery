@@ -25,7 +25,7 @@ export default function PaymentSuccess() {
         redirectStatus: redirect_status,
       });
     }
-  }, [router.isReady]);
+  }, [router.isReady, router.query]);
   console.log(data.amount);
   return (
     <div>

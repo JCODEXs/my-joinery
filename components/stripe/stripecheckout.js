@@ -8,7 +8,6 @@ import {
   Elements,
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { Center } from "@react-three/drei";
 export default function StripeCheckout({ items, total }) {
   // console.log(items[0], total);
   const CheckoutForm = () => {
@@ -34,7 +33,7 @@ export default function StripeCheckout({ items, total }) {
           console.log(data?.paymentIntent?.client_secret);
           setclientSecret(data?.paymentIntent?.client_secret);
         });
-    }, [total]);
+    }, []);
 
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -69,38 +68,6 @@ export default function StripeCheckout({ items, total }) {
         console.log("else");
       }
     };
-    // Create the PaymentIntent and obtain clientSecret from your server endpoint
-    // const res = await fetch("api/create-stripe-session", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(items),
-    // });
-    // const restw = await res;
-    // console.log(restw);
-    // console.log(res.json());
-    // // const { client_secret: clientSecret } = await res.json();
-
-    // const { error } = await stripe.confirmPayment({
-    //   //`Elements` instance that was used to create the Payment Element
-    //   elements,
-    //   clientSecret,
-    //   confirmParams: {
-    //     return_url: "https://example.com/order/123/complete",
-    //   },
-    // });
-
-    // if (error) {
-    //   // This point will only be reached if there is an immediate error when
-    //   // confirming the payment. Show error to your customer (for example, payment
-    //   // details incomplete)
-    //   setErrorMessage(error.message);
-    // } else {
-    //   // Your customer will be redirected to your `return_url`. For some payment
-    //   // methods like iDEAL, your customer will be redirected to an intermediate
-    //   // site first to authorize the payment, then redirected to the `return_url`.
-    // }
 
     return (
       <form onSubmit={handleSubmit}>
