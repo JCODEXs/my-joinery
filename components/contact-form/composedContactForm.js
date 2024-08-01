@@ -1,19 +1,18 @@
 "use client";
+import { useRef } from "react";
 import BackgroundSoft from "../3dview/backgroundSoft";
 import ContactForm from "./contactForm";
-import { useRef } from "react";
 
-export default function ComposedContactForm({ setFormRef }) {
-  const servicesRef = useRef(null);
-  setFormRef(servicesRef);
+export default function ComposedContactForm({}) {
   return (
     <div
       style={{
-        height: "580px",
+        height: "560px",
         display: "flex",
         position: "relative",
         width: "100%",
-        // marginBottom: "1rem",
+        margin: "1.5rem",
+        marginTop: "2.5rem",
       }}
     >
       <BackgroundSoft />
@@ -32,7 +31,6 @@ export default function ComposedContactForm({ setFormRef }) {
           left: "50%",
           transform: "translateX(-50%)",
         }}
-        ref={servicesRef}
       >
         <ContactForm />
       </div>

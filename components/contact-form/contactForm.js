@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import styles from "./contactForm.module.css";
 import Notification from "../notifications/notification";
@@ -21,7 +21,7 @@ async function sendContactData(contactDetails) {
   }
 }
 
-function ContactForm({ showImage = true }) {
+function ContactForm({ showImage = true, setFormRef }) {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredName, setEnteredName] = useState("");
   const [phone, setPhone] = useState("");
@@ -29,6 +29,12 @@ function ContactForm({ showImage = true }) {
   const [requestStatus, setRequestStatus] = useState(); // 'pending', 'success', 'error'
   const [requestError, setRequestError] = useState();
   // console.log(showImage);
+  const ref = useRef(null);
+  useEffect(() => {
+    if (setFormRef) {
+      setFormRef.current = ref.current;
+    }
+  }, [setFormRef]);
 
   useEffect(() => {
     if (requestStatus === "success" || requestStatus === "error") {
@@ -111,7 +117,7 @@ function ContactForm({ showImage = true }) {
           </p>
         </div>
         <h1 style={{ margin: "1rem" }}>Ingrese su informacion</h1>
-        <form className={styles.form} onSubmit={sendMessageHandler}>
+        <form ref={ref} className={styles.form} onSubmit={sendMessageHandler}>
           <div className={styles.controls}>
             <div className={styles.control}>
               <label htmlFor="email"> Email</label>

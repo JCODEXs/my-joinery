@@ -11,7 +11,7 @@ export function WoodScene(props) {
   const { nodes, materials } = useGLTF("./woodscene-transformed.glb");
   const group = useRef();
   useAnimationFrame((state, delta) => {
-    group.current.rotation.y += 0.00015 * delta;
+    group.current.rotation.y += 0.00025 * delta;
   });
   return (
     <group ref={group} {...props} dispose={null}>

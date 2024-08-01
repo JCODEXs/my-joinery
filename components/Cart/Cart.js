@@ -4,12 +4,13 @@ import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
 import CartContext from "../../store/cart-context";
+import StripeCheckout from "../stripe/stripecheckout";
 
 const Cart = ({ hideCartHandler }) => {
   const cartCtx = useContext(CartContext);
   console.log(cartCtx.items);
 
-  const totalAmount = `Total: $${cartCtx.totalAmount}`;
+  const totalAmount = cartCtx.totalAmount;
 
   const cartItemRemoveHandler = (id) => {
     cartCtx.removeItem(id);
@@ -61,10 +62,11 @@ const Cart = ({ hideCartHandler }) => {
       {modalActions}
       {cartItems}
       <div className={classes.total}>
-        {" "}
+        {"Total: $ "}
         {totalAmount}
         {contactInfo}
       </div>
+      <StripeCheckout items={cartCtx.items} total={totalAmount} />
     </Modal>
   );
 };

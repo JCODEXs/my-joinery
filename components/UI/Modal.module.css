@@ -13,11 +13,12 @@
   
 }
 .modal {
-  
-  position: fixed;
+  overflow-y: scroll;
+  position: absolute;
   top: 10vh;
-  left: 5%;
-  width: 90%;
+  left: 2%;
+  width: 95%;
+  max-height: fit-content;
   background-color: #F2F0EB;
   padding: 1rem;
   border-radius: 14px;

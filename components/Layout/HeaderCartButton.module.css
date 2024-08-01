@@ -32,14 +32,13 @@
   font-weight: bold;
 }
 
-.button:hover .badge,
-.button:active .badge {
+.button:hover ,
+.button:active  {
   background-color: #b32517;
-}
-
-.bump {
   animation: bump 300ms ease-out;
 }
+
+
 
 @keyframes bump {
   0% {

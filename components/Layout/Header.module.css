@@ -71,12 +71,12 @@
   transform: rotateZ(-5deg) translateY(-2rem) translateX(-1rem);
   z-index: 5;
 }
-
+/* #D95F18// #593122; */
 .button {
   cursor: pointer;
   font-size: 1.2rem;
   border: none;
-  background-color:  #593122;
+  background-color:#593122; 
   color: white;
   padding: 0.55rem 0.75rem;
   margin: 0.35rem;
@@ -107,7 +107,7 @@
 .button:hover,
 .button:active {
   background-color:#D95F18;
-  animation: InputAnimation 4s  ;
+  animation: InputAnimation 1s  ;
 }
 
 .title{

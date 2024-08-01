@@ -3,7 +3,7 @@
   width: 90%;
   margin: 1rem auto;
   animation: meals-appear 1s ease-out forwards;
-  margin-bottom: 137px;
+  margin-bottom: 177px;
 }
 
 .MealsLoading {
@@ -18,7 +18,7 @@
 
 .meals ul {
   list-style: none;
-  margin: 0;
+ 
   padding: 0;
 }
 
@@ -32,6 +32,6 @@
 
   to {
     opacity: 1;
-    transform: translateY(137px);
+    transform: translateY(157px);
   }
 }

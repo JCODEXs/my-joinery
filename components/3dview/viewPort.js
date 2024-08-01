@@ -32,7 +32,7 @@ const Background = () => {
       camera={{ near: 1, far: 400, position: [12, 4, 4] }}
     >
       <Suspense fallback={<Loader />}>
-        <directionalLight position={[1, 1, 10]} intensity={2} />
+        <directionalLight position={[1, 1, 10]} intensity={1.5} />
         <ambientLight />
         <pointLight />
         <spotLight />
@@ -48,10 +48,7 @@ const Background = () => {
     scale={screenScale}
     rotation={rotation}
     /> */}
-        {/* <Bonsai
-    scale={[4,4,3]}
-    rotation={[0,0,0]}
-    /> */}
+
         <Desk
           position={screenPosition}
           scale={[7, 7, 7]}

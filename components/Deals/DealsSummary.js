@@ -29,7 +29,7 @@ const DealsSummary = () => {
           mejor manera posible!{" "}
         </p>
         <button onClick={() => handleClick()} className={styles.button}>
-          Diseños
+          Ver Diseños
         </button>
 
         <p>

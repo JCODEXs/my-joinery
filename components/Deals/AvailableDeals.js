@@ -33,6 +33,18 @@ const AvailableDeals = ({ images }) => {
         description: "Hechas en madera amarilla ",
         price: 275000,
       },
+      {
+        id: 5,
+        name: "escritorio",
+        description: "Hechas en madera amarilla ",
+        price: 275000,
+      },
+      {
+        id: 6,
+        name: "escritorio",
+        description: "Hechas en madera amarilla ",
+        price: 275000,
+      },
     ]);
   }, []);
 

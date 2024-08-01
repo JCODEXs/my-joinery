@@ -3,7 +3,13 @@ import HeaderCartButton from "./HeaderCartButton";
 import classes from "./Header.module.css";
 import Image from "next/image";
 import { useRouter } from "next/router";
-const Header = ({ showCartHandler, showContact, isEnglish, contactRef }) => {
+const Header = ({
+  showCartHandler,
+  showContact,
+  isEnglish,
+  contactRef,
+  scrollToRef,
+}) => {
   const [width, setWidth] = useState(600);
   const [height, setHeight] = useState(300);
   const router = useRouter();
@@ -14,8 +20,11 @@ const Header = ({ showCartHandler, showContact, isEnglish, contactRef }) => {
   const handleClickP = () => {
     router.push("/productos");
   };
+  const handleClickC = () => {
+    router.push("/contacto");
+  };
   const [Language, setLanguage] = useState("English");
-
+  console.log(router.pathname);
   useEffect(() => {
     if (isEnglish) {
       setLanguage("English");
@@ -67,7 +76,7 @@ const Header = ({ showCartHandler, showContact, isEnglish, contactRef }) => {
           top: 0,
           left: 0,
           backgroundImage: 'url("/herramientas2.jpg")',
-          height: "99px",
+          height: "88px",
           // width: "auto",
           display: "flex",
           justifyContent: "space-around",
@@ -75,6 +84,7 @@ const Header = ({ showCartHandler, showContact, isEnglish, contactRef }) => {
           alignItems: "start",
           alignContent: "center",
           zIndex: 30,
+          marginBottom: "0.5rem",
         }}
       >
         <div id="my-image">
@@ -82,14 +92,17 @@ const Header = ({ showCartHandler, showContact, isEnglish, contactRef }) => {
             onClick={() => handleClick()}
             src="/MadeIn.png"
             alt="l Logo"
-            width={137}
-            height={137}
+            width={117}
+            height={113}
             style={{
               boxShadow: "1px 10px 20px rgba(0, 0, 0, 0.2)", // Add a shadow
-              transform: "rotateZ(-10deg) rotateY(-10deg) rotateX(-10deg)", // Rotate the image
+              transform: " rotateZ(-10deg) ", // Rotate the image
               perspective: "500px", // Set perspective,
               borderRadius: "50%",
-              margin: "0.5rem",
+              borderBlockColor: "black",
+              borderBlockEndWidth: "3px",
+              borderBlockEndStyle: "dotted",
+              marginTop: "-1.25rem",
               zIndex: 3,
             }}
           />
@@ -108,9 +121,9 @@ const Header = ({ showCartHandler, showContact, isEnglish, contactRef }) => {
               margin: "0.5rem",
             }}
           >
-            {showContact ? (
+            {router.pathname !== "/productos" ? (
               <button onClick={() => handleClickP()} className={classes.button}>
-                Productos
+                Nuestros <br /> Productos
               </button>
             ) : (
               <button onClick={() => handleClick()} className={classes.button}>
@@ -118,11 +131,16 @@ const Header = ({ showCartHandler, showContact, isEnglish, contactRef }) => {
               </button>
             )}
             {/* <button className={classes.button}>Talleres</button> */}
-            {showContact && (
-              <button onClick={() => contactRef()} className={classes.button}>
-                Contacto
+            {router.pathname !== "/contacto" ? (
+              <button onClick={() => handleClickC()} className={classes.button}>
+                Contactanos
+              </button>
+            ) : (
+              <button onClick={() => handleClick()} className={classes.button}>
+                Inicio
               </button>
             )}
+
             <HeaderCartButton onClick={() => showCartHandler()} />
           </div>
         </div>

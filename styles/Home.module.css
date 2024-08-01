@@ -19,11 +19,12 @@
 .footer {
   display: flex;
   flex: 1;
-  padding: 2rem 0;
+  padding: 0.5rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
   background: #593122;
+  height: 37px;
 }
 
 .footer a {
@@ -109,7 +110,7 @@
 }
 
 .logo {
-  height: 1em;
+  height: 3.5em;
   margin-left: 0.5rem;
 }
 
@@ -147,9 +148,25 @@
 }
   .callToaction{
     font-size: 1.3rem;
-    animation: InputAnimation 4s infinite;
-    margin:2rem;
+    animation: InputAnimation 4s ;
+    margin:1rem;
+    padding-inline: 2rem;
     padding: auto;
     display: flex;
     justify-content: center;
   }
+
+  .animateEntrance{
+ animation: meals-appear 2s ease-out forwards;
+  }
+  @keyframes meals-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}

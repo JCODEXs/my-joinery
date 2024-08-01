@@ -10,7 +10,7 @@ export default function Gallery({ images }) {
     // Define the scroll position and duration for each image
     const scrollPositions = Array.from({ length: 12 }, (_, i) => ({
       position: i * 260 * 2,
-      duration: 1000,
+      duration: 500,
     }));
 
     let currentIndex = 0;
@@ -57,7 +57,7 @@ export default function Gallery({ images }) {
       container && requestAnimationFrame(animateScroll);
     };
 
-    const easeOutQuart = (t) => 1 - (1 - t) ** 0.5;
+    const easeOutQuart = (t) => 1 - (1 - t) ** 2;
 
     // Start the initial timeout
     timeoutId = setTimeout(scrollContainer, 3500);

@@ -38,9 +38,16 @@ const DealItem = (props) => {
   return (
     <li className={classes.meal}>
       <div className={classes.dealAtributes}>
-        <div className={classes.image}>
-          <Image src={props.src} height={imageSize} width={imageSize} />
-        </div>
+        {props.src && (
+          <div className={classes.image}>
+            <Image
+              src={props.src}
+              height={imageSize}
+              width={imageSize}
+              alt="wooditem"
+            />
+          </div>
+        )}
         <div className={classes.dealDetails}>
           <div>{props.name}</div>
           {showDescription && (
