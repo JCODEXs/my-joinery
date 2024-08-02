@@ -3,7 +3,7 @@ import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import Loader from "../Loader";
-import { Desk } from "../../public/models/desk3d";
+// import { Desk } from "../../public/models/desk3d";
 import { WoodScene } from "../../public/models/Woodscene";
 const BackgroundSoft = () => {
   const adjustSceneForScreen = () => {

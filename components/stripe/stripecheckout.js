@@ -56,7 +56,7 @@ export default function StripeCheckout({ items, total }) {
         elements,
         clientSecret: client_secret,
         confirmParams: {
-          return_url: `http://localhost:3000/payment-success?amount=${total}`,
+          return_url: `http://maderafi.mettalecode.site/payment-success?amount=${total}`,
         },
       });
       if (error) {
@@ -90,7 +90,7 @@ export default function StripeCheckout({ items, total }) {
             type="submit"
             disabled={!stripe || !elements}
           >
-            {loading ? "Processing..." : `pay ${total}`}
+            {loading ? "Processing..." : `Paga ${total}  chl Pesos`}
           </button>
           {/* Show error message to your customers */}
           {errorMessage && <div>{errorMessage}</div>}
