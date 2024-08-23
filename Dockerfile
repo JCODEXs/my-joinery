@@ -30,17 +30,16 @@ FROM node:20-alpine AS runner
 WORKDIR /usr/src/app
 
 # Copy the built app and the node_modules from the builder stage
-COPY --from=builder /usr/src/app/.next ./.next
-COPY --from=builder /usr/src/app/public ./public
-COPY --from=deps /usr/src/app/node_modules ./node_modules
+COPY --from=builder /usr/src/app/.next/standalone ./
+
 
 # Expose ports
 EXPOSE 3000
-EXPOSE 80
+
 
 # Set environment variables
 ENV PORT 3000
-ENV HOST=0.0.0.0
+
 
 # Run the app
-CMD ["node", "server.js"]
+CMD HOSTNAME="0.0.0.0" node server.js
