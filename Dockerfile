@@ -1,35 +1,46 @@
+# Stage 1: Install dependencies
 FROM node:20-alpine AS deps
-# RUN apk update && apk upgrade &&     apk add --no-cache git
-# ENV PORT 80
+
 # Create app directory
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-RUN node --max-old-space-size=8192
-# Installing dependencies
-COPY package*.json /usr/src/app/
-RUN npm install -g npm@latest
+
+# Install dependencies
+COPY package*.json ./
 RUN npm install
 
-## second stage
+# Stage 2: Build the app
 FROM node:20-alpine AS builder
 
-# Copying source files
-# COPY . /usr/src/app
- COPY . .
- COPY --from=deps /node_modules ./usr/src/app/node_modules
-# Building app
+# Create app directory
+WORKDIR /usr/src/app
+
+# Copy the dependencies from the deps stage
+COPY --from=deps /usr/src/app/node_modules ./node_modules
+
+# Copy all source files
+COPY . .
+
+# Build the application
 RUN npm run build
-FROM node:20alpine as runner 
-# RUN npm cache clean --force
-# ENV HOST=0.0.0.0
-COPY --from=builder /.next/astandalone ./usr/src/app
- EXPOSE 3000
- EXPOSE 80
- ENV PORT 3000 
- ENV PORT 80
- EXPOSE 8080
-# Running the app
-# CMD ["npm","run","wsserver"]
-CMD HOSTNAME="0.0.0.0" node server.js
 
+# Stage 3: Run the app
+FROM node:20-alpine AS runner
 
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy the built app and the node_modules from the builder stage
+COPY --from=builder /usr/src/app/.next ./.next
+COPY --from=builder /usr/src/app/public ./public
+COPY --from=deps /usr/src/app/node_modules ./node_modules
+
+# Expose ports
+EXPOSE 3000
+EXPOSE 80
+
+# Set environment variables
+ENV PORT 3000
+ENV HOST=0.0.0.0
+
+# Run the app
+CMD ["node", "server.js"]
