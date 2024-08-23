@@ -64,7 +64,7 @@ const Cart = ({ hideCartHandler }) => {
       <div className={classes.total}>
         {"Total: $ "}
         {totalAmount}
-        {contactInfo}
+        {/* {contactInfo} */}
       </div>
       <StripeCheckout items={cartCtx.items} total={totalAmount} />
     </Modal>

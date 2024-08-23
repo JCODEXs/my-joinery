@@ -30,6 +30,8 @@ FROM node:20-alpine AS runner
 WORKDIR /usr/src/app
 
 # Copy the built app and the node_modules from the builder stage
+COPY --from=builder /usr/src/app/.next ./.next
+COPY --from=builder /usr/src/app/public ./public
 COPY --from=builder /usr/src/app/.next/standalone ./
 
 
