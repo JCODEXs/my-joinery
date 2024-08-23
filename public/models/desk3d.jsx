@@ -17,6 +17,7 @@ export function Desk(props) {
   });
   return (
     <group ref={group} {...props} dispose={null}>
+      
       <mesh
         // castShadow
         // receiveShadow
