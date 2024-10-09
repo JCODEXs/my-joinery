@@ -19,19 +19,22 @@
 .footer {
   display: flex;
   flex: 1;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   background: #593122;
-  height: 37px;
+  height: 137px;
 }
 
 .footer a {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  align-items: end;
+  justify-items: end;
+  gap: 1rem;
+  
 }
 
 .title a {
